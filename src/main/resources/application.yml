@@ -1,0 +1,33 @@
+server:
+  # port: 8090
+  forward-headers-strategy: framework
+  tomcat:
+    relaxed-path-chars: "[,]"
+    relaxed-query-chars: "[,]"
+
+# logging:
+#   level:
+#     root: DEBUG
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: env       
+
+github:
+  token: ${GITHUB_PAT:token}
+  reposUrl: https://api.github.com/repos
+  organization: NTTData-HybridCloud
+  repositoryName: knot-onboarding-resources
+
+# springdoc:
+#   swagger-ui:
+#     path: /swagger-ui.html
+#     configUrl: /administration-api/api-docs/swagger-config
+#     enabled: true
+#     disable-swagger-default-url: true
+#     url: /administration-api/api-docs
+#   api-docs:
+#     path: /api-docs
+#     enabled: true
